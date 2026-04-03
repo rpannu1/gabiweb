@@ -16,18 +16,17 @@ export default function HomePage() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 pb-20 w-full">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-6 items-center">
-            {/* Text side */}
+            {/* Text side — shows first on mobile */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="order-2 lg:order-1"
             >
-              {/* Campaign logo — big and proud */}
+              {/* Campaign logo — smaller on mobile, big on desktop */}
               <motion.img
                 src="/logo.png"
                 alt="Gabriella Noack for District 6"
-                className="w-full max-w-sm md:max-w-md mb-6 drop-shadow-md -rotate-1"
+                className="w-48 md:w-full md:max-w-md mb-6 drop-shadow-md -rotate-1"
                 initial={{ opacity: 0, y: 20, rotate: -4 }}
                 animate={{ opacity: 1, y: 0, rotate: -1 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -80,12 +79,12 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* Photo side — large polaroid */}
+            {/* Photo side — below text on mobile, right side on desktop */}
             <motion.div
               initial={{ opacity: 0, rotate: 6, scale: 0.9 }}
               animate={{ opacity: 1, rotate: 3, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="order-1 lg:order-2 flex justify-center"
+              className="flex justify-center"
             >
               <div className="relative">
                 {/* Tape strip on top */}
