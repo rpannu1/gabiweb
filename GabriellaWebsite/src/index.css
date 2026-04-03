@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+@theme {
+  --color-orange: #e06930;
+  --color-orange-light: #f0884f;
+  --color-orange-dark: #c45522;
+  --color-sun: #f2b740;
+  --color-peach: #f7d9b4;
+  --color-sky: #5ba4d9;
+  --color-red: #d63031;
+  --color-warm-bg: #faf5ee;
+  --color-warm-card: #fff7ee;
+  --color-warm-dark: #f0e6d6;
+  --color-cream: #f5efe6;
+  --color-paper: #fdf8f0;
+  --color-ink: #1a1612;
+  --color-ink-soft: #6b5d4f;
+  --color-navy: #1b2a4a;
+  --font-display: 'Anton', 'Impact', sans-serif;
+  --font-hand: 'Caveat', cursive;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  background: #faf5ee;
+  color: #1a1612;
+}
+
+::selection { background: #e06930; color: white; }
+
+/* ============================================
+   SCRAPBOOK ELEMENTS
+   ============================================ */
+
+/* Paper texture overlay */
+.paper-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Tape strip effect */
+.tape {
+  position: relative;
+}
+.tape::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 80px;
+  height: 28px;
+  background: rgba(242, 183, 64, 0.45);
+  backdrop-filter: blur(1px);
+  z-index: 10;
+}
+
+.tape-left::before {
+  left: 20%;
+  transform: rotate(-5deg);
+}
+
+.tape-right::before {
+  left: 70%;
+  transform: rotate(3deg);
+}
+
+/* Polaroid photo frame */
+.polaroid {
+  background: white;
+  padding: 12px 12px 48px 12px;
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.12),
+    0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Hand-drawn underline */
+.hand-underline {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12'%3E%3Cpath d='M2,8 Q50,2 100,7 Q150,12 198,5' stroke='%23e06930' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 12px;
+  padding-bottom: 8px;
+}
+
+/* Hand-drawn circle */
+.hand-circle {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cellipse cx='60' cy='60' rx='54' ry='50' stroke='%23e06930' stroke-width='2.5' fill='none' transform='rotate(-5 60 60)' stroke-dasharray='4,2' opacity='0.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110% 110%;
+  padding: 16px 24px;
+}
+
+/* Marker highlight */
+.marker-highlight {
+  background: linear-gradient(180deg, transparent 55%, rgba(242, 183, 64, 0.35) 55%, rgba(242, 183, 64, 0.35) 90%, transparent 90%);
+}
+
+.marker-highlight-orange {
+  background: linear-gradient(180deg, transparent 55%, rgba(224, 105, 48, 0.25) 55%, rgba(224, 105, 48, 0.25) 90%, transparent 90%);
+}
+
+/* Sticker effect */
+.sticker {
+  display: inline-block;
+  transform: rotate(-3deg);
+  border: 2px solid currentColor;
+  padding: 6px 16px;
+  font-family: var(--font-hand);
+  font-weight: 600;
+}
+
+/* Torn paper edge */
+.torn-top {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 20'%3E%3Cpath d='M0,20 L0,8 Q30,12 60,6 Q90,0 120,5 Q150,10 180,4 Q210,0 240,7 Q270,14 300,6 Q330,0 360,8 Q390,14 420,5 Q450,0 480,6 Q510,12 540,4 Q570,0 600,8 Q630,14 660,5 Q690,0 720,7 Q750,12 780,4 Q810,0 840,8 Q870,14 900,6 Q930,0 960,5 Q990,10 1020,4 Q1050,0 1080,7 Q1110,14 1140,6 Q1170,0 1200,8 L1200,20 Z' fill='black'/%3E%3C/svg%3E");
+  mask-size: 100% 20px;
+  mask-repeat: no-repeat;
+  mask-position: top;
+  padding-top: 20px;
+}
+
+.torn-bottom {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 20'%3E%3Cpath d='M0,0 L0,12 Q30,8 60,14 Q90,20 120,15 Q150,10 180,16 Q210,20 240,13 Q270,6 300,14 Q330,20 360,12 Q390,6 420,15 Q450,20 480,14 Q510,8 540,16 Q570,20 600,12 Q630,6 660,15 Q690,20 720,13 Q750,8 780,16 Q810,20 840,12 Q870,6 900,14 Q930,20 960,15 Q990,10 1020,16 Q1050,20 1080,13 Q1110,6 1140,14 Q1170,20 1200,12 L1200,0 Z' fill='black'/%3E%3C/svg%3E");
+  mask-size: 100% 20px;
+  mask-repeat: no-repeat;
+  mask-position: bottom;
+  padding-bottom: 20px;
+}
+
+/* Notebook lines */
+.notebook-lines {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    rgba(224, 105, 48, 0.08) 31px,
+    rgba(224, 105, 48, 0.08) 32px
+  );
+  background-position: 0 8px;
+}
+
+/* Washi tape decorative strips */
+.washi-tape {
+  position: relative;
+}
+.washi-tape::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 24px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(224, 105, 48, 0.15),
+    rgba(224, 105, 48, 0.15) 4px,
+    rgba(242, 183, 64, 0.15) 4px,
+    rgba(242, 183, 64, 0.15) 8px
+  );
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes scribble {
+  0%, 100% { transform: rotate(-1deg) scale(1); }
+  25% { transform: rotate(0.5deg) scale(1.01); }
+  75% { transform: rotate(-0.5deg) scale(0.99); }
+}
+
+@keyframes tape-sway {
+  0%, 100% { transform: translateX(-50%) rotate(-2deg); }
+  50% { transform: translateX(-50%) rotate(1deg); }
+}
+
+/* Doodle circle */
+.doodle-circle {
+  border-radius: 50%;
+  border: 3px dashed;
+  border-color: rgba(224, 105, 48, 0.15);
+  animation: wiggle 8s ease-in-out infinite;
+}
+
+/* Stamp rotation effect */
+.stamp-rotate {
+  animation: scribble 6s ease-in-out infinite;
+}
+
+/* Grid paper background */
+.grid-paper {
+  background-image:
+    linear-gradient(rgba(224, 105, 48, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(224, 105, 48, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Scattered dots pattern */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(224, 105, 48, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
