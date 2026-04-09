@@ -273,6 +273,7 @@ export default function HomePage() {
             {[
               { src: '/seiu.png', alt: 'SEIU Endorsement', rot: '-rotate-2' },
               { src: '/bernie.png', alt: 'Bernie Sanders Campaign Endorsement', rot: 'rotate-1' },
+              { src: '/mbclc.png', alt: 'MBCLC Endorsement', rot: '-rotate-1' },
             ].map((img, i) => (
               <motion.div
                 key={img.alt}

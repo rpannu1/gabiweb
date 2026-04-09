@@ -52,17 +52,12 @@ export default function AboutPage() {
                   label="Read full bio"
                   preview={
                     <p>
-                      Gabriella Noack is running for city council district six because she thinks it is pertinent that
-                      young and dedicated community organizers step up to make a difference in local politics. She has
-                      been a <span className="marker-highlight font-semibold">volunteer peer tutor and teaching assistant</span> at Cabrillo College, a volunteer technology
-                      teacher in a local jail in Watsonville, and is currently on a team co-facilitating a technology
-                      program in collaboration with the Everett program and Barrios Unidos, designed to teach vocational
-                      technology skills to previously incarcerated persons in the Santa Cruz area.
+                      Time for a new voice! Gabriella Noack is running for city council district six because she thinks it is pertinent that young and dedicated community organizers step up to make a difference in local politics. She has been a volunteer peer tutor and teaching assistant at Cabrillo College, a volunteer technology teacher in a local jail in Watsonville, and is currently on a team co-facilitating a technology program in collaboration with the UCSC Everett program and Barrios Unidos, designed to teach vocational technology skills to previously incarcerated persons in the Santa Cruz area.
                     </p>
                   }
                 >
                   <p className="mt-4">
-                    She is a graduating senior at University of California, Santa Cruz (she graduates 10 days after the election!)
+                    She is a graduating senior at University of California, Santa Cruz who plans to make Santa Cruz her home.
                   </p>
                 </Expandable>
               </div>
@@ -132,6 +127,7 @@ export default function AboutPage() {
             {[
               { src: '/seiu.png', alt: 'SEIU Endorsement', rot: '-rotate-2' },
               { src: '/bernie.png', alt: 'Bernie Sanders Campaign Endorsement', rot: 'rotate-1' },
+              { src: '/mbclc.png', alt: 'MBCLC Endorsement', rot: '-rotate-1' },
             ].map((img, i) => (
               <motion.div
                 key={img.alt}

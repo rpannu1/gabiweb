@@ -6,7 +6,9 @@ import PageWrapper from '../components/PageWrapper'
 const policies = [
   {
     number: '01',
-    title: 'Streamline the Permitting Process for ADUs',
+    title: (
+      <>Streamline the Permitting Process for ADU<span className="normal-case">s</span></>
+    ),
     desc: 'Streamline the permitting process for ADUs through creation of a district commission that educates property owners, provides contractor contacts, and oversees permitting to make ADU building more accessible.',
   },
   {
@@ -16,7 +18,9 @@ const policies = [
   },
   {
     number: '03',
-    title: 'Subsidizing the construction of ADUs',
+    title: (
+      <>Subsidizing the construction of ADU<span className="normal-case">s</span></>
+    ),
     desc: 'Incentivize ADU building through construction subsidies for affordable rentals. Bi-annual housing market studies will determine minimum rental rates for five-year periods to qualify for subsidies.',
   },
   {
